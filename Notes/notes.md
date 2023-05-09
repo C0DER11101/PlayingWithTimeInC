@@ -1,5 +1,4 @@
 # Basic
-
 ### time_t time(NULL)
 
 >`time(NULL)` returns the current time in as a long integer.
