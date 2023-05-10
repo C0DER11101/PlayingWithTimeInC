@@ -11,7 +11,7 @@ int main(void)
 	sleep(2); // pause the program for 2 seconds!!
 
 	time_t after2Secs=time(NULL);
-	printf("%ld\n", now);
+	printf("%ld\n", after2Secs);
 
 	double diff=difftime(after2Secs, now);
 
