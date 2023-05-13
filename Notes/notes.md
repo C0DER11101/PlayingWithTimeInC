@@ -1,5 +1,5 @@
 # Basic
-### time_t time(NULL)
+### `time_t time(NULL)`
 
 >`time(NULL)` returns the current time in as a long integer.
 
@@ -12,17 +12,17 @@ sleep(2);
 ```
 will make the program for 2 seconds.
 
-### double difftime(time_t latest, time_previous);
+### `double difftime(time_t latest, time_previous);`
 >This function returns the difference between two times. It returns a double value.
 
 <img src="https://private-user-images.githubusercontent.com/96164229/237073050-4dee5f85-eb99-4d84-8ba2-80c951023f8e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzNjI5MjkyLCJuYmYiOjE2ODM2Mjg5OTIsInBhdGgiOiIvOTYxNjQyMjkvMjM3MDczMDUwLTRkZWU1Zjg1LWViOTktNGQ4NC04YmEyLTgwYzk1MTAyM2Y4ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUwOVQxMDQzMTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NmUwNTA1MjRkOGM2MWFjMDgxZTZmZDkxZTNhZjRmMTNjZDBlMzE3Nzg2NGNhOWJiNGU4MDM1YzU2ZDExMTkwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.wkGnjTlBkdfI9tH2GHDzVgFCDCSKU4tLpT0ZcO6fsXc" width="60%" height="60%">
 
-### char*ctime(time_t*)
+### `char*ctime(time_t*)`
 >It's used to print the time in a pretty format as a string.
 
 <img src="https://private-user-images.githubusercontent.com/96164229/237073084-dc2f9c26-aebb-41b1-b1aa-482e66ded45b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzNjI5MzAxLCJuYmYiOjE2ODM2MjkwMDEsInBhdGgiOiIvOTYxNjQyMjkvMjM3MDczMDg0LWRjMmY5YzI2LWFlYmItNDFiMS1iMWFhLTQ4MmU2NmRlZDQ1Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUwOVQxMDQzMjFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xOTE2MTg1NTE2MTkwMTI4OWIxNWVhOTVkNDM4OWE5YTM2NjJhODhlMzgwOTc0MzIwNDc0YjdlZWI1Njk2NjY5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.VomNXbHCa2jLHgk_hjxSGtKOSg_lBUFPmA6VTsF0tlg" width="60%" height="60%">
 
-### struct tm*gmtime(time_t*);
+### `struct tm*gmtime(time_t*);`
 >Returns a pointer to the struct tm containing information about hour, minutes, seconds, year, etc.
 
 Members of struct tm,
@@ -53,12 +53,12 @@ Since the time returned is in Greenwich Mean Time, so the hours donot match.
 The tm_year is the number of years that have passed since 1900.
 
 
-### struct tm*localtime(time_t*);
+### `struct tm*localtime(time_t*);`
 >Same as gmtime() but it returns the local time.
 
 <img src="https://private-user-images.githubusercontent.com/96164229/237082004-c0c9a042-5985-46f8-81b3-04d3133efc9b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzNjMxNjIyLCJuYmYiOjE2ODM2MzEzMjIsInBhdGgiOiIvOTYxNjQyMjkvMjM3MDgyMDA0LWMwYzlhMDQyLTU5ODUtNDZmOC04MWIzLTA0ZDMxMzNlZmM5Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUwOVQxMTIyMDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yNzZkMjhkZDlhYjI5MDQ1ZjQ1OGQxMjNjZmJjNDdmODM2ZGFiM2Y0M2UyODMzZDJkYTUwZGE3MGVkMzFlOWY3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.IVbXA_LIkuaIQtEBmE_FwvaM5ZNYSCFP91TRYiKojxM" width="60%" height="60%">
 
-### char*asctime(struct tm*);
+### `char*asctime(struct tm*);`
 >It's just like ctime() but it works with variables of type `struct tm`.
 
 <img src="https://private-user-images.githubusercontent.com/96164229/237083621-c28ad280-f188-4cec-8ecb-d01aa5901262.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzNjMyMTc1LCJuYmYiOjE2ODM2MzE4NzUsInBhdGgiOiIvOTYxNjQyMjkvMjM3MDgzNjIxLWMyOGFkMjgwLWYxODgtNGNlYy04ZWNiLWQwMWFhNTkwMTI2Mi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUwOVQxMTMxMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03MWZmNDdhYmUzYjRiZTdiODM1MzUxODc0NjUzNjQ1MDI3ZWJiNzIwNzc2ZWQzYTdlMDc3NzhiZTVjMmFkNWUzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.UGMTn3HG1jLGxqUfzw0ux2KG0QdEFSDSR6mO9AE-IwM" width="60%" height="60%">
