@@ -63,6 +63,54 @@ The tm_year is the number of years that have passed since 1900.
 
 <img src="https://private-user-images.githubusercontent.com/96164229/237083621-c28ad280-f188-4cec-8ecb-d01aa5901262.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzNjMyMTc1LCJuYmYiOjE2ODM2MzE4NzUsInBhdGgiOiIvOTYxNjQyMjkvMjM3MDgzNjIxLWMyOGFkMjgwLWYxODgtNGNlYy04ZWNiLWQwMWFhNTkwMTI2Mi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTA5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUwOVQxMTMxMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03MWZmNDdhYmUzYjRiZTdiODM1MzUxODc0NjUzNjQ1MDI3ZWJiNzIwNzc2ZWQzYTdlMDc3NzhiZTVjMmFkNWUzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.UGMTn3HG1jLGxqUfzw0ux2KG0QdEFSDSR6mO9AE-IwM" width="60%" height="60%">
 
+### `time_t mktime(struct tm*);`
+>Converts `struct tm` type variable to `time_t` variable and returns it.
+
+<img src="https://private-user-images.githubusercontent.com/96164229/238123197-ad6aacc5-793b-440b-8b11-7d1d2d1051f0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzOTY1OTMxLCJuYmYiOjE2ODM5NjU2MzEsInBhdGgiOiIvOTYxNjQyMjkvMjM4MTIzMTk3LWFkNmFhY2M1LTc5M2ItNDQwYi04YjExLTdkMWQyZDEwNTFmMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUxM1QwODEzNTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yOTM1OGU2NTBlNTY2ZmZhNGI5YjBiZDJlMTNiYjE3NmZhODI3NzY4MTI2MjRiMWEzY2JiZWI1MmMyMjg3YTcwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ahTyRUT6DySf9_M19YmwF0dWs0o2lijHHpV1IQeogb0" width="60%" height="60%">
+
+Notice the output of [7.c]()
+
+**Output:**
+
+<img src="https://private-user-images.githubusercontent.com/96164229/238125403-30721bc4-ca57-46c8-84d5-cc29cfd74315.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzOTY5MDI5LCJuYmYiOjE2ODM5Njg3MjksInBhdGgiOiIvOTYxNjQyMjkvMjM4MTI1NDAzLTMwNzIxYmM0LWNhNTctNDZjOC04NGQ1LWNjMjljZmQ3NDMxNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUxM1QwOTA1MjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NGQ2MzM1MWQ1ZGQ5NTI2ODIwZTQwNWJiYTU2NjNmMWUyODQyMWI4OGIxMjg3MjMwMzlhZDE3MTE1MWFjZjllJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.jC8_mAodwW-HJLdG9gN6KGsitJH9g46S4g2_yIIHhzE" width="60%" height="60%">
+
+In the code, I incremented `tm_min` by 1, actually here `tm_min` was not incremented by the number `1` but by **1 min**.
+
+That's why we can see 1683966065 at the bottom.
+
+### `size_t strftime(char*, size_t, const char*, struct tm*)`
+>Converts time into string format and allows us to customize it using place holders. Also, it returns the length of the string format of the time.
+
+[8.c](https://github.com/C0DER11101/PlayingWithTimeInC/blob/TimeC/tests/8.c).
+
+**Output:**
+
+<img src="https://private-user-images.githubusercontent.com/96164229/238125831-4ba1dc2f-fe8e-4b7b-95c2-fba5e64c8904.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzOTY5Nzc1LCJuYmYiOjE2ODM5Njk0NzUsInBhdGgiOiIvOTYxNjQyMjkvMjM4MTI1ODMxLTRiYTFkYzJmLWZlOGUtNGI3Yi05NWMyLWZiYTVlNjRjODkwNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUxM1QwOTE3NTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xZDY0ZTkzNzczMjZjYzQwMWMwZjI5NDhkMGRkY2ZlNGJkYWUyY2E4MzZiNDkwZjZhYzY3ZDNhYjg3OGVlYjI2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.AFAyY1ZpZIrC4_0ffm3ip4g9Zny5XoIKoP_TkbuoJ7Q" width="60%" height="60%">
+
+### `clock_t clock();`
+>Returns the number of clocks that have elapsed. We can use this function to measure how long a program takes to perform a specific task.
+
+[9.c](https://github.com/C0DER11101/PlayingWithTimeInC/blob/TimeC/tests/9.c).
+
+```c
+clock_t start, end;
+start=clock();
+for(int i=0; i<1000; i++);
+end=clock();
+
+double total=(double)(end-start)/CLOCKS_PER_SEC;
+```
+
+`start=clock();` records the number of clock ticks that elapsed before entering the for loop.
+
+`end=clock();` records the number of clock ticks that elapsed after exiting the for loop.
+
+`double total=(double)(end-start)/CLOCKS_PER_SEC;` will give us the number of seconds the for loop ran.
+
+**Output:**
+
+<img src="https://private-user-images.githubusercontent.com/96164229/238126705-a4ec2a0d-0510-46dc-b3fb-ac446a22251b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjgzOTcxMTU0LCJuYmYiOjE2ODM5NzA4NTQsInBhdGgiOiIvOTYxNjQyMjkvMjM4MTI2NzA1LWE0ZWMyYTBkLTA1MTAtNDZkYy1iM2ZiLWFjNDQ2YTIyMjUxYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUxM1QwOTQwNTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05Y2E0YzdkMjJlOGUzYjRiMmU2NWNjMjgyMWNiYzYxYTcxMThhYzgxYzQ2ZDAzYzRmNzA4MWZkNWI1NjM5MDhhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.o1RW5E2OyRcSAkqRxRz-T0UVxUpP-0Rtzn0VeInsoGs" width="60%" height="60%">
+
 <p align="center">
 &#9678; &#9678; &#9678;
 </p>
